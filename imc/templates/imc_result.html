@@ -1,0 +1,23 @@
+
+
+{% extends 'base.html' %}
+
+{% block 'tag_title' %}
+    <title>Resultado do cálculo do IMC - Método GET</title>
+{% endblock %}
+
+{% block 'tag_link' %}
+    <link rel="stylesheet" type="text/css" href="../../static/css/imc_result.css">
+{% endblock %}
+
+{% block 'tag_body' %}
+    <main>
+        <section id="imc-displaying-template">
+            <div id="content">
+                <div class="title"><h2>Resultado do cálculo do IMC</h2></div>
+                <div id="result"><p>Peso: {{ weight }} + altura: {{ height }} = {{ imc }}</p></div>
+                <div id="return-index-page"><a href="{% url 'imc' %}">Retornar</a></div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

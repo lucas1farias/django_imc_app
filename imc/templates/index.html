@@ -1,0 +1,34 @@
+
+
+{% extends 'base.html' %}
+
+{% block 'tag_title' %}
+    <title>Página Inicial</title>
+{% endblock %}
+
+{% block 'tag_link' %}
+    <link rel="stylesheet" type="text/css" href="../../static/css/imc_index.css">
+{% endblock %}
+
+{% block 'tag_body' %}
+    <main>
+        <section id="algorithm-links">
+            <div id="container" class="links">
+                <div id="title">
+                    <h2>Página Inicial</h2>
+                </div>
+                <div id="calculator-imc-method-1">
+                    <a href="{% url 'imc' %}">Calculadora de IMC - método GET</a>
+                </div>
+                <div id="calculator-imc-method-2">
+                    <a href="{% url 'imc2' %}">Calculadora de IMC - método POST + modelo</a>
+                </div>
+                <div id="calculator-imc-method-3">
+                    <a href="{% url 'imc-script' %}">Calculadora de IMC - tag script</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="text/javascript" src="../../static/js/index.js"></script>
+{% endblock %}

@@ -1,0 +1,39 @@
+
+
+{% extends 'base.html' %}
+
+{% block 'tag_title' %}
+    <title>Calcular IMC - método POST</title>
+{% endblock %}
+
+{% block 'tag_link' %}
+    <link rel="stylesheet" type="text/css" href="../../static/css/imc2.css">
+{% endblock %}
+
+{% block 'tag_body' %}
+    <main>
+        <section id="calculator-imc-method-post">
+            <div id="content">
+                <div id="index-page">
+                    <a href="{% url 'index' %}">Página inicial</a>
+                </div>
+                <div id="title">
+                    <h2>Calculadora de IMC - usando método POST + modelo</h2>
+                </div>
+
+                <div id="calculator-form">
+                    <form action="{% url 'imc2' %}" method="post">
+                        {% csrf_token %}
+                        <input type="text" name="weight" placeholder="Peso" required>
+                        <input type="text" name="height" placeholder="Altura" required>
+                        <input type="submit" value="Calcular">
+                    </form>
+                </div>
+
+                <div id="result">
+                    <p>Resultado do IMC: {{ result }}</p>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

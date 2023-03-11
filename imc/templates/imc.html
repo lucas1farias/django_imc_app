@@ -1,0 +1,36 @@
+
+
+{% extends 'base.html' %}
+
+{% block 'tag_title' %}
+    <title>Calcular IMC - método GET</title>
+{% endblock %}
+
+{% block 'tag_link' %}
+    <link rel="stylesheet" type="text/css" href="../../static/css/imc.css">
+{% endblock %}
+
+{% block 'tag_body' %}
+    <main>
+        <section id="calculator-imc">
+            <div id="container">
+                <!-- 1. -->
+                <div id="index-page">
+                    <a href="{% url 'index' %}">Página inicial</a>
+                </div>
+                <!-- 2. -->
+                <div id="title">
+                    <h2>Calculadora de IMC - usando método GET</h2>
+                </div>
+                <!-- 3. -->
+                <div id="calculator-form">
+                    <form action="{% url 'imc-app-result' %}" method="get">
+                        <input type="text" name="weight" placeholder="Peso" required>
+                        <input type="text" name="height" placeholder="Altura" required>
+                        <input type="submit" value="Calcular">
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+{% endblock %}

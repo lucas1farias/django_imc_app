@@ -1,0 +1,46 @@
+
+
+{% extends 'base.html' %}
+
+{% block 'tag_title' %}
+    <title>Calculadora de IMC - tag script</title>
+{% endblock %}
+
+{% block 'tag_link' %}
+    <link rel="stylesheet" type="text/css" href="../../static/css/imc_script.css">
+{% endblock %}
+
+{% block 'tag_body' %}
+    <main>
+        <section id="index-page">
+            <div class="content">
+                <div class="index-page-link">
+                    <a href="{% url 'index' %}">Página Inicial</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="imc-calculator">
+            <div class="content">
+                <!-- 1. -->
+                <div id="title">
+                  <h2>Calculadora de IMC - tag script</h2>
+                </div>
+                <!-- 2. -->
+                <div id="height-input">
+                  <input type="text" id="weight" placeholder="Peso" required>
+                </div>
+                <!-- 3. -->
+                <div id="weight-input">
+                  <input type="text" id="height" placeholder="Altura" required>
+                </div>
+                <!-- 4. -->
+                <div id="result">
+                  <p></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="text/javascript" src="../../static/js/imc_script.js"></script>
+{% endblock %}
